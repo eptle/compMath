@@ -17,7 +17,7 @@ def urmat(ux0, ux1, ut0, ut1, d, h, tau):
         D = [u[0][j + 1]]
         for i in range(1, len(x) - 1):
             D.append((1 + 2 * l) * u[i][j - 1] - l * (u[i + 1][j - 1] + u[i - 1][j - 1]) - 2 * u[i][j])
-        a, b = [0], [0]
+        a, b = [0], [1]
         for i in range(1, len(x) - 1):
             a.append(-l / (l * a[i - 1] - (1 + 2 * l)))
             b.append((D[i] - l * b[i - 1]) / (l * a[i - 1] - (1 + 2 * l)))
